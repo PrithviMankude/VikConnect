@@ -581,4 +581,5 @@ button {
   top: 4rem;
   right: 2rem;
   display: inline-block;
+  z-index: 2;
 }

@@ -6,6 +6,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  DELETE_ACCOUNT,
 } from '../actions/types';
 
 //InitialState-- will be picked from client side  and user details from request to /api/auth
@@ -42,6 +43,7 @@ const auth = (state = initialState, action) => {
     case LOGIN_FAIL:
     case AUTH_ERROR:
     case LOGOUT:
+    case DELETE_ACCOUNT:
       localStorage.removeItem('token');
       return {
         ...state,

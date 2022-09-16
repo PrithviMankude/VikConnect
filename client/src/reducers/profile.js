@@ -1,4 +1,9 @@
-import { GET_PROFILE, PROFILE_ERROR, CLEAR_PROFILE } from '../actions/types';
+import {
+  GET_PROFILE,
+  PROFILE_ERROR,
+  CLEAR_PROFILE,
+  UPDATE_PROFILE,
+} from '../actions/types';
 
 //profile will have own profile + any profile we visit
 
@@ -15,6 +20,7 @@ const profile = (state = initialState, action) => {
 
   switch (type) {
     case GET_PROFILE:
+    case UPDATE_PROFILE:
       return {
         ...state,
         profile: payload,

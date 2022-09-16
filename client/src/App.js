@@ -6,6 +6,11 @@ import Landing from './components/layout/Landing';
 import Dashboard from './components/dashboard/Dashboard';
 
 import Register from './components/auth/Register';
+
+import CreateProfile from './components/profile-form/CreateProfile';
+import EditProfile from './components/profile-form/EditProfile';
+import AddExperience from './components/profile-form/AddExperience';
+import AddEducation from './components/profile-form/AddEducation';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -45,6 +50,38 @@ const App = () => {
             element={
               <PrivateRoute>
                 <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/create-profile'
+            element={
+              <PrivateRoute>
+                <CreateProfile />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/edit-profile'
+            element={
+              <PrivateRoute>
+                <EditProfile />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/add-experience'
+            element={
+              <PrivateRoute>
+                <AddExperience />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/add-education'
+            element={
+              <PrivateRoute>
+                <AddEducation />
               </PrivateRoute>
             }
           />

@@ -8,9 +8,9 @@ const config = require('config');
 const bcrypt = require('bcryptjs');
 
 //@route    - GET /api/auth
-//@desc     - Test route
+//@desc     - Gets the user and sends back user data through MW token
 //@Access   - Protected
-//Also used by fronte nd for stateless JWT verification
+//Also used by front end for stateless JWT verification through req.user.id which comes through MW auth
 router.get('/', auth, async (req, res) => {
   console.log(req.user);
 

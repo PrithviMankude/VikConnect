@@ -3,7 +3,7 @@ import { Link, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Landing = () => {
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, loading } = useSelector((state) => state.auth);
 
   /* We dont want to be able to go to landing page after login */
   if (isAuthenticated) {

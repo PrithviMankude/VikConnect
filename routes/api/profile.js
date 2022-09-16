@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth_mw');
 const Profile = require('../../models/Profile');
+const Post = require('../../models/Post');
 const User = require('../../models/User');
+
 const { check, validationResult } = require('express-validator');
 const axios = require('axios');
 
@@ -157,8 +159,10 @@ router.get('/user/:user_id', async (req, res) => {
 /* MW is needed as we need req.user.i. Can use Promise.all here as aew doing same operations */
 router.delete('/', auth, async (req, res) => {
   try {
+    await Post.deleteMany({ user: req.user.id });
     await Profile.findOneAndRemove({ user: req.user.id });
     await User.findOneAndRemove({ _id: req.user.id });
+
     res.status(200).json({ msg: 'Removed the user' });
   } catch (err) {
     console.error(err.message);
