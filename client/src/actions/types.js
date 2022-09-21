@@ -19,3 +19,16 @@ export const CLEAR_PROFILE = 'CLEAR_PROFILE'; //To remove the persisting profile
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 
 export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
+
+export const GET_PROFILES = 'GET_PROFILES';
+
+export const GET_POSTS = 'GET_POSTS';
+export const POST_ERROR = 'POST_ERROR';
+export const UPDATE_LIKES = 'UPDATE_LIKES';
+export const DELETE_POST = 'DELETE_POST';
+export const ADD_POST = 'ADD_POST';
+
+//For individual posts
+export const GET_POST = 'GET_POST';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const DELETE_COMMENT = 'DELETE_COMMENT';

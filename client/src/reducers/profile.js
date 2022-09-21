@@ -3,6 +3,7 @@ import {
   PROFILE_ERROR,
   CLEAR_PROFILE,
   UPDATE_PROFILE,
+  GET_PROFILES,
 } from '../actions/types';
 
 //profile will have own profile + any profile we visit
@@ -24,6 +25,12 @@ const profile = (state = initialState, action) => {
       return {
         ...state,
         profile: payload,
+        loading: false,
+      };
+    case GET_PROFILES:
+      return {
+        ...state,
+        profiles: payload,
         loading: false,
       };
     case PROFILE_ERROR:

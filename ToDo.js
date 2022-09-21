@@ -13,3 +13,5 @@ https://developedbyed.com/
 6.Emmet: "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   }
+
+7. ProfileTop.js : See how object.entries().filter is used 

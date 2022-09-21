@@ -17,6 +17,12 @@ const Navbar = () => {
   const authLinks = (
     <ul>
       <li>
+        <Link to='/profiles'>AllDevelopers</Link>
+      </li>
+      <li>
+        <Link to='/posts'>Posts</Link>
+      </li>
+      <li>
         <Link to='/dashboard'>
           <i className='fas fa-user'></i> {'  '}
           <span className='hide-sm'>Dashboard</span>
@@ -34,7 +40,7 @@ const Navbar = () => {
   const guestLinks = (
     <ul>
       <li>
-        <a href='#!'>Developers</a>
+        <Link to='/profiles'>All Developers</Link>
       </li>
       <li>
         <Link to='/register'>Register</Link>
@@ -53,9 +59,11 @@ const Navbar = () => {
         </Link>
       </h1>
       {/*Will show only if loading state is false to make sure rendering is complete */}
-      {!loading && (
+      {/*{!loading && (
         <Fragment> {isAuthenticated ? authLinks : guestLinks} </Fragment>
       )}
+      */}
+      <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
     </nav>
   );
 };

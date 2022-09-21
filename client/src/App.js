@@ -6,11 +6,16 @@ import Landing from './components/layout/Landing';
 import Dashboard from './components/dashboard/Dashboard';
 
 import Register from './components/auth/Register';
-
+import Profiles from './components/profiles/Profiles';
 import CreateProfile from './components/profile-form/CreateProfile';
 import EditProfile from './components/profile-form/EditProfile';
 import AddExperience from './components/profile-form/AddExperience';
 import AddEducation from './components/profile-form/AddEducation';
+import Profile from './components/profile/Profile';
+
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
+
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -45,6 +50,8 @@ const App = () => {
           <Route path='/' element={<Landing />} />
           <Route path='register' element={<Register />} />
           <Route path='login' element={<Login />} />
+          <Route path='/profiles' element={<Profiles />} />
+          <Route path='/profile/:id' element={<Profile />} />
           <Route
             path='/dashboard'
             element={
@@ -82,6 +89,23 @@ const App = () => {
             element={
               <PrivateRoute>
                 <AddEducation />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path='/posts'
+            element={
+              <PrivateRoute>
+                <Posts />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/posts/:id' //Its posts/:id
+            element={
+              <PrivateRoute>
+                <Post />
               </PrivateRoute>
             }
           />
